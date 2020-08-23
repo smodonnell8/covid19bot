@@ -1,0 +1,17 @@
+<launch>
+	<!--Websocket launch-->
+	<include file="./websocket.launch"/>
+	<!--Run rosserial for the conveyor arduino-->
+	<node name='conveyor_arduino' pkg='rosserial_python' type='serial_node.py' args='/dev/ttyACM0' respawn="true"/> 
+	<!--Run python conveyor node-->
+	<node name='conveyor_master' pkg='teachbot_ros' type='conveyor_node.py'/>
+	<!--Run module3 sawyer node-->
+	<node name='module3_sawyer' pkg='teachbot_ros' type='module3_sawyer.py'/>
+	<!--Run module3 master node-->
+	<node name='module3' pkg='teachbot_ros' type='module3.py' />
+	<!--Call the sh file to setup the nodejs server -->
+	<node name='js_server' pkg='teachbot_ros' type='nodejs.sh' />
+	<!--Calling the sh file to open firefox to the correct address-->
+	<node name="module3_firefox" pkg='teachbot_ros' type='module3_firefox.sh' />
+
+</launch>

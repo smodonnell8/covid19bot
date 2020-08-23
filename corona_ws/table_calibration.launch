@@ -1,0 +1,11 @@
+<launch>
+	<!--Websocket launch-->
+	<include file="./websocket.launch"/>
+	<!--Call corresponding robot node for sawyer--> 
+	<!--node name='sawyer' pkg='teachbot_ros' type='table.py'/-->
+	<!--Call the sh file to setup the nodejs server -->
+	<node name='js_server' pkg='teachbot_ros' type='nodejs.sh' />
+	<!--Calling the sh file to open firefox to the correct address-->
+	<node name="firefox" pkg='teachbot_ros' type='table.sh' />
+
+</launch>

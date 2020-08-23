@@ -1,0 +1,56 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ROS Install Files #
+#####################
+.rosinstall
+.rosinstall.bak
+
+# Automatically Generated .pyc Files #
+######################################
+teachbot_ws/src/teachbot_ros/src/*.pyc
+
+# Files you need to replace #
+#############################
+teachbot_ws/intera.sh
+teachbot_ws/build/
+teachbot_ws/devel/
+teachbot_ws/src/intera_common
+teachbot_ws/src/intera_sdk
+teachbot_ws/src/rosnodejs_examples
+teachbot_ws/src/sawyer_robot

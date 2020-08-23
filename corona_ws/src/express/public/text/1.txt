@@ -1,0 +1,78 @@
+Hello, my name is Teachbot. It's nice to meet you. Please stand back so I can show you something.
+Want to know how I did that? Inside my arm I have a bunch of electronic things called electric motors. They let me move my arm, like how muscles move yours. Here, take a look.
+Just by looking, how many motors do you think I have in my arm? To input your answer, wait for me to move my arm. Next, turn the scroll wheel on my arm to scroll through numbers. Then press on the scroll wheel to select your answer.
+Step back and we'll count them together.
+Pay close attention while I move each motor individually. Try to count how many motors I have.
+How many motors did you count?
+Good job! Now, please stand back so I can show you something else.
+Not quite. Remember that each motor can move in two directions: clockwise and counterclockwise.
+Like most of my human coworkers, I too have a torso and an arm. Unlike most of my human coworkers' arms, which only have shoulder, elbow, and wrist joints, my arm has six joints! For simplicity, I'll call this one my shoulder,
+this one my elbow,
+and this one my wrist,
+and lastly, we'll call this one my torso.
+But how do I tell where my arm is? How do I know how far I've rotated each joint? I'm going to unlock my torso joint. Try pushing my arm. I'll display how much I think you've turned it on the screen. When you're finished, press the scroll wheel button to let me know.
+Let me show you how I know. Please stand back.
+This device is called an encoder. Every motor in my arm has one. These encoders can measure the angles of each of my joints.
+Now I'm going to lock my torso and unlock my wrist. Try pushing the tip of my arm again. When you're done, press the scroll wheel button.
+So far I've only unlocked one joint at a time. Let's try unlocking both my torso and wrist joints. Push on my arm again and see what happens. When you're done, press the scroll wheel button.
+Good! Now, before we go further, how many encoders do you think I have in my arm? Step back so I can move my arm for you to use the scroll wheel.
+Good job!
+Not quite. If I have one encoder for every motor, how many encoders do I have?
+Now grab and move my arm again. I've unlocked all of my joints, so my arm might drift around a little. Go ahead and grab it anyway while watching the projection to see what I sense as you move each joint. When you're done, press the scroll wheel button.
+Using my encoders, I can measure the angles of all seven of my joints. Please stand back so I can reset my position.
+Now let's talk about a new concept, feedback. I've projected some points onto the table. Push my arm so that my shadow is on point B.
+Great! Thanks. Now I'm going to move to point B on my own.
+Oops! This time I overshot to a new point, C.
+Can you correct my position back to point B?
+Thank you! At any point, I know the position of my arm because of my encoder. Here is position A,
+here is position B,
+and here is position C.
+I compare my encoder reading at my current position, C, against the destination encoder position, B. If C is smaller than B, I push left. If C is longer than B, I push right.
+But that's only one demonstration of feedback. Let me show you another one. Try gently pushing down on my arm. Can you notice the difference?
+Watch the screen as you push my arm. I've put up a little display showing how far you've pushed my arm and how much force I'm using to push back. When you're done, press the scroll wheel button.
+Before, my motors were turned off, but right now, I'm creating force with my motors to keep my arm in place. What am I using to know when my arm is moving?
+That's right! I measured my arm positions, and created a force to push my arm back.
+Do you remember pushing my arm and I knew how far I moved?
+Look at the projection again to see how I decide how hard to push back. The black line indicates where I want my arm to be, called the "reference" position. The further you push my arm away from the black line, the harder I tell my motors to push back. It should feel a little bit like a rubber band: the more you displace it, the harder it will want to spring back into its original position. When you're done, press the scroll wheel button.
+Now let's talk about why all of this is possible. 
+The reason I'm able to teach and interact with you is because I have something called memory. 
+I don't actually have a brain like you, so everything you see was put into my memory before we met. This is just like how your cell phone is able to remember phone numbers or store pictures. 
+In this last demonstration, I invite you to test my memory and how good it can be. 
+I'm going to make my arm go completely limp and you can move it however you'd like. Whenever you want me to memorize a position, press my scroll wheel. After I've memorized five positions positions, I will execute each of them in order. 
+Ok, here we go!
+The first position was here.
+The second position was here.
+The third position was here.
+The fourth position was here.
+And here was the last position!
+If I wanted to, I could memorize dozens of positions with no problem! In future lessons, I'll demonstrate reasons why this is so useful. But until then, have a good day!
+Now let's talk about why I have so many joints.
+Having so many joints is really important. If I can only move my torso,
+I can only reach points along this curve. So, if I want to reach this point,
+I'll need to move another motor, too!
+I'm going to move my hand back to where it was and use the projector to show the same arc as before.
+If I want to reach that point, I only need to move one motor, my elbow.
+How many motors will I need to use to reach this new point?
+Watch closely and see if you're right. 
+I only needed to use one motor, but it was my shoulder, not my elbow. 
+With my elbow motor, I could move along this curve, 
+ut with my shoulder motor, I can move along this curve. 
+Since I have six motors, let me show you everywhere I can move by just moving one of them.
+So, if I want to move to this point, how many movements will I have to make if I can only move one motor at a time?
+Watch closely and see if you're right. 
+I took two steps to get there. First, I moved this motor, 
+then this one. 
+I can also travel in four steps 
+or eight steps. 
+Notice how, the more steps I take, the shorter each step is and the less time I spend using my elbow before switching to my shoulder. If I keep increasing the number of steps, eventually there won't be any time at all between when I am using my elbow and when I am using my shoulder, like this. 
+By combining all of the motions I can make with just one of my joints, I can move my hand freely through a large space! Grab my hand and see how large my range of motion is.
+Your cell phone can store phone numbers by using memory. Similar to that, I can store things into my memory as well. One of these things is position. Try moving my arm again to a new position.
+Are you done moving my arm?
+Using my memory, we started my arm from right here...
+and ended right here. Is that correct?
+Let's play a game of connect-the-dots. I'm going to project a dot on the table, and you move my hand to it in as straight of a line as possible. After we've connected all the dots, I'll play the motions back and draw a picture.
+Now before you leave, let me show you one last thing, the last joint we haven't used. Here are my hands! We'll use them more in the next session, but for now, good job completing module 1! High two!
+Look on the screen. Using my encoders, I know how high off the ground my hand is, and I've shown its height as a blue circle. 
+If my hand moves down like this, then the blue dot moves down as well. 
+If my hand moves up like this, then the blue dot moves up as well.
+Now, you should also see a yellow dot on the screen next to the blue dot. The yellow dot indicates how high I want my hand to be. Can you move my hand so that the blue dot follows the yellow dot?

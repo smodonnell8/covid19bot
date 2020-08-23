@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Module 1</title>
+
+	<link rel="stylesheet" type="text/css" href="https://localhost:8000/css/1.css">
+
+	<!-- Structural Utilities -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src='https://lib.smartsparrow.com/simcapi-js-3.0.6.min.js'></script>
+	<script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+	<script type="text/javascript" src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/jquery-textfill/jquery-textfill@0.6.0/source/jquery.textfill.min.js"></script>
+
+	<!-- TeachBot Utilities -->
+	<script src="https://localhost:8000/js/utils/arc3pt.js"></script>
+	<script src="https://localhost:8000/js/utils/draw_ball.js"></script>
+	<script src="https://localhost:8000/js/utils/draw_bar.js"></script>
+	<script src="https://localhost:8000/js/utils/draw_spring.js"></script>
+	<script src="https://localhost:8000/js/utils/sleep.js"></script>
+</head>
+
+<body>
+	<div class = "content">
+		<!-- Text -->
+		<div id='adjustable' style="height:100px"><span id = 'modifiable_text'>Loading...</span></div>
+		
+		<!-- Image -->
+		<img id="image" src="https://localhost:8000/images/Welcome.png" alt="Welcome">
+		<br>
+
+		<!-- Animation -->
+		<video id="animator" preload>
+			<source src="https://localhost:8000/videos/motor_animation.mp4" type="video/mp4">
+		</video>
+
+		<!-- Angle Sliders -->
+		<div class="container" id="protractor_table">
+		<table>
+			<tr>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor1"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor2"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor3"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor4"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor5"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor6"></td>
+				<td><input type="range" min="-315" max="315" class="protractor" id="protractor7"></td>
+			</tr>
+			<tr>
+				<td><canvas id="bar1" class="bar"></canvas></td>
+				<td><canvas id="bar2" class="bar"></canvas></td>
+				<td><canvas id="bar3" class="bar"></canvas></td>
+				<td><canvas id="bar4" class="bar"></canvas></td>
+				<td><canvas id="bar5" class="bar"></canvas></td>
+				<td><canvas id="bar6" class="bar"></canvas></td>
+				<td><canvas id="bar7" class="bar"></canvas></td>
+			</tr>
+			<tr>
+				<td>Joint 1</td>
+				<td>Joint 2</td>
+				<td>Joint 3</td>
+				<td>Joint 4</td>
+				<td>Joint 5</td>
+				<td>Joint 6</td>
+				<td>Joint 7</td>
+			</tr>
+		</table>
+		</div>
+
+		<!-- Spring -->
+		<div class="container" id="canvas_container"> <canvas id="canvas" height="415px" width="770px"></canvas></div>
+
+
+		<!-- Speech -->
+		<audio id="player"></audio>
+	</div>
+
+	<!-- Run JS Module -->
+	<script type="text/javascript" src = 'https://localhost:8000/js/1.js'></script>
+
+	<!-- Display Pointer Position 
+	<script type="text/javascript">
+		function writeMessage(canvas, message) {
+		    ctx.clearRect(0, 0, canvas.width, canvas.height);
+		    ctx.font = '18pt Calibri';
+		    ctx.fillStyle = 'black';
+		    ctx.fillText(message, 10, 25);
+		}
+
+		function getMousePos(canvas, evt) {
+		    var rect = canvas.getBoundingClientRect();
+		    return {
+		      x: evt.clientX - rect.left,
+		      y: evt.clientY - rect.top
+		    };
+		}
+
+		image.style.display = 'none';
+		canvas_container.style.display = 'initial';
+		var ctx = canvas.getContext('2d');
+		canvas.addEventListener('mousemove', function(evt) {
+		    var mousePos = getMousePos(canvas, evt);
+		    var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+		    writeMessage(canvas, message);
+		}, false);
+	</script> -->
+</body>
+
+</html>

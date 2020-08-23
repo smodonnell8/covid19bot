@@ -1,0 +1,20 @@
+Useful Commands:
+
+roslaunch websocket.launch
+roslaunch realsense2_camera rs_camera.launch
+<<<<<<< HEAD
+roslaunch orb_slam2_ros orb_slam2_d435_rgbd.launch
+node src/express/bin/www.js 
+roslaunch realsense2_camera rs_camera.launch filters:=pointcloud
+
+Installs:
+
+https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+realsense-viewer
+=======
+node src/express/bin/www.js 
+
+odrive ids: 
+20673881304E
+20653884304E
+>>>>>>> 830925caddc9fed1dc23db3f85ae11e983375ddd

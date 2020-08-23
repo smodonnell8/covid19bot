@@ -1,0 +1,12 @@
+<launch>
+  	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+  	<arg name="port" value="9090"/>
+  	<arg name="address" value="18.21.58.194"/>
+  	<!-- <arg name="address" value="localhost"/> -->
+
+  	<arg name="ssl" default="true" />
+    <arg name="certfile" default="$(env PWD)/sslcert/ia.crt" />
+ 	<arg name="keyfile" default="$(env PWD)/sslcert/ia.key" /> 
+ 	<arg name="authenticate" default="false" />
+	</include>
+</launch>

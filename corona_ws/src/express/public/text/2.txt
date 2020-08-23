@@ -1,0 +1,45 @@
+Today, we will be learning some more things involving movement. A lot of what we do today will be based on these objects in front of me.
+To begin with, let me try to grab box 1 with my hands.
+Oh, I’ve seemed to make a mistake. Let me try again. Would you please move the box, so that the top of it is back into the designated area? Press the Scroll wheel on my arm when you're done.
+The first lesson of the day will be about orientation. As you saw, my hand can’t grab the object as it is. But...
+...if I change the orientation of my hand, I can grip this object. Since I don’t have thumbs like you, I have to get creative with how I pick up things. Think of orientation like how you have to rotate your hand to a certain manner to pick up something like a water bottle.
+To get a feeling for what I mean by what orientation is and what position is, try playing with my arm a bit. 
+If you press the gray button on my wrist, my arm will allow for changes in position. If you press the white button on my wrist, my arm will allow for changes in orientation. Feel free to switch between the two modes to figure out the difference between the position and orientation. After you're done, press the scroll wheel to continue.
+Let’s try an example. I want to package box 2 into a bin. Can you move my hand so that it is positioned over the box and can grab the box if it moves downwards? Use the gray and white buttons to switch between position and orientation mode just like before. Press the scroll wheel button when you're done. 
+Alright. Let’s see.
+Oops, I couldn’t pick it up like that. This time, try to get the entire width of the box in my grasp.
+Great! In addition to orienting my hand correctly when I grab objects, I also have to make sure that the object I’m picking up is oriented correctly. 
+For example, now that I’ve picked up the box, I need to package it into the bin. If I try to place it in the bin this way...
+...it won’t fit. Think of it like a correctly shaped peg going into a correctly shaped hole. So, before I can put the box in the bin, I’ll need to rotate my wrist like this. 
+Now I can package the box.
+Now let’s try moving this 3rd box into the 2nd bin. Can you move my hand so its position is over the box? Use the gray and white buttons on my wrist to switch between position and orientation modes. Press the scroll wheel to continue.
+Alright. Let’s see.
+Oops, I couldn't pick it up like that. Try to move my arm again, using the controls from before.
+Now that I've grasped the object, do you think I can move it straight into the bin? Press the X button if you think I can, and the Square button if you think I can't. Before you answer, take a second and think about what you would do to move the box into the bin.
+That’s correct. I can’t just move it directly to the box. If I try to move it directly to the box, this happens.
+Let’s try again. Could you put the bin back into place? Press the Scroll wheel when you're finished moving the bin.
+If I want to place the object in the bin, I’ll have to do something different. First, I could lift up the box. Then...
+I can move it above the bin.
+Afterwards, I can lower the box, and then finally release it.
+Well, let’s find out!
+Oh no! It turns out I can’t move it directly to the bin. Maybe I should try something different. Could you move the bin back to the green marker? Press the Scroll wheel when you're done moving the box.
+This method of moving my arm around used a thing called waypoints.
+Waypoints are like little stops I make on the way to my destination to make sure I get there. It’s like stopping for gas during a road trip.
+Now, let's say I want to move the box back.
+To do so, I'd have to go through a different path considering I'm starting from the end position, rather than the start position. It would look something like this. 
+Before we start the last topic, could you move my arm over the 4th box? Use the gray and white buttons on my wrist to switch between position and orientation modes. Press the scroll wheel to continue.
+Alright. Let's see.
+Oops, I couldn't pick it up like that. Try to move my arm again, using the controls from before.
+Now let's talk about why all of this is possible. 
+The reason I'm able to teach and interact with you is because I have something called memory. 
+I don't actually have a brain like you, so everything you see was put into my memory before we met. This is just like how your cell phone is able to remember phone numbers, or store pictures. 
+In this last demonstration, I invite you to use my memory and see how good it can be. 
+I'm going to make my arm go completely limp and you can move it however you'd like. Whenever you want me to memorize a position, press my scroll wheel. When you press my scroll wheel, you'll be programming that position into my memory. After I've memorized five positions positions, I will execute each of them in order. 
+Ok, here we go!
+The first position was here.
+The second position was here.
+The third position was here.
+The fourth position was here.
+And here was the last position!
+If I wanted to, I could memorize dozens of positions with no problem! In future lessons, I'll demonstrate reasons why this is so useful. But until then, have a good day!
+That concludes module 2. Thanks for participating.
