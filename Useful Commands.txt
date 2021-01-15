@@ -2,7 +2,7 @@ Useful Commands:
 
 roslaunch websocket.launch
 roslaunch realsense2_camera rs_camera.launch
-<<<<<<< HEAD
+rosrun user_input odrive_node.py
 roslaunch orb_slam2_ros orb_slam2_d435_rgbd.launch
 node src/express/bin/www.js 
 roslaunch realsense2_camera rs_camera.launch filters:=pointcloud
