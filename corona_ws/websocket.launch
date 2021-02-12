@@ -1,7 +1,7 @@
 <launch>
   	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
   	<arg name="port" value="9090"/>
-  	<arg name="address" value="18.21.58.194"/>
+  	<arg name="address" value="10.31.204.240"/>
   	<!-- <arg name="address" value="localhost"/> -->
 
   	<arg name="ssl" default="true" />

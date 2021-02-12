@@ -11,6 +11,9 @@ Installs:
 
 https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
 realsense-viewer
+
+To run SLAM:
+add https://github.com/appliedAI-Initiative/orb_slam_2_ros package to this work space and build everything together. 
 =======
 node src/express/bin/www.js 
 

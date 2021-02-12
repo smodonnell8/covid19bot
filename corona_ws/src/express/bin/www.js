@@ -23,8 +23,8 @@ var http_port = normalizePort(process.env.PORT || '3000');
 var https_port = normalizePort(process.env.PORT || '8000');
 // http_app.set('port', http_port);
 // https_app.set('port', https_port);
-http_app.set('port', '18.21.58.194' + http_port);
-https_app.set('port', '18.21.58.194' + https_port);
+http_app.set('port', '10.31.204.240' + http_port);
+https_app.set('port', '10.31.204.240' + https_port);
 /**
  * Create HTTP server.
  */

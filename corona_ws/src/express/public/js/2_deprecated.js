@@ -49,14 +49,6 @@ var unique_input_topic = new ROSLIB.Topic({
     messageType: 'std_msgs/String'
 })
 
-/**********************************
- *   Setup SmartSparrow SimCapi   *
- **********************************/
-var simModel = new simcapi.CapiAdapter.CapiModel({
-    last_interacted_obj: 'none',
-    what_action: 'none'
-});
-
 /************************
  *   Setup Text Files   *
  ************************/

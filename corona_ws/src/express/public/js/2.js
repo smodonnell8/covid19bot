@@ -6,7 +6,7 @@ var module_num = 2;         // Replace this with the module number.
 var lines_of_text = 45;      // Replace this with the number of lines of text TeachBot must read.
 var wifi = true        
 if(wifi){
-    var ipaddress = '18.21.58.194';
+    var ipaddress = '10.31.204.240';
 }
 else{
     var ipaddress = 'localhost'

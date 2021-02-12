@@ -165,6 +165,6 @@ if __name__ == '__main__':
 
 	# myargv = rospy.myargv(argv=sys.argv)
 	# OdriveMaster(myargv[1], myargv[2]) # Feed in odrive SSNs, and list of axes
-	ssn_list = ['20673881304E', '20653884304E']
+	ssn_list = ['205337853548', '20653884304E']
 	axes_list = [0,1,1,0]
 	OdriveMaster(ssn_list, axes_list)
