@@ -1,0 +1,39 @@
+UR5 robot is computer 1. 
+Mobile robot is computer 2.
+All numbers will refer to those two ids. For example, ip1 refers to the ipaddress of computer 1 and ip2 refers to the ipaddress of computer 2. 
+
+Connect both computers to the same wifi network. 
+
+Computer 1 will run the ROS master. But, it needs to be configured so that the URI is accessible to the other machine that is connected to the same local network. To do so, we will run the following commands before running roscore on computer 1:
+
+export ROS_MASTER_URI=http://10.31.204.74:11311
+export ROS_IP=10.31.204.74   
+
+This will cause the roscore URI to be run on the URI specified above. At the time of writing this, ip1 is 10.31.204.74. Now we run roscore as usual with:
+
+roscore
+
+Now we want to open a new terminal on computer run to run some process. Let's say it's the talker node for the rospy_tutorials package.
+To do so, we must set the environmental variables again typing: 
+export ROS_MASTER_URI=http://10.31.204.74:11311
+export ROS_IP=10.31.204.74
+
+Then we can run our process:
+rosrun rospy_tutorials talker.py
+
+
+
+We switch to computer 2 and now can open a terminal. We want to run the other half of that tutorial package which sets up a listener. To do so, we must set our environmental variables like before, BUT the ROS_IP is different now. 
+
+export ROS_MASTER_URI=http://10.31.204.74:11311
+export ROS_IP=10.31.197.37
+
+The ROS_MASTER_URI is the same as before, which makes sense because its the URI that we set when we ran roscore on the first machine. The IP on computer 2 corresponds to its own ip address ip2. At the time of writing, ip2 is 10.31.197.37. 
+
+Now we can run our process in the terminal:
+rosrun rospy_tutorials listener.py
+
+And we should see the communication. To verify the communication is bidirectional, which requires the ROS_IPs to be set for both computers, we can swap the talker and listeners to opposite terminals. 
+
+For the use of our code, we can do a similar test using "rosrun user_input keyboard_process.py" and "rostopic echo /joy/cmd", and sourcing the correct setup.bash files at the appropriate times. 
+
