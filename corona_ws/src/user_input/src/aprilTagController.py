@@ -30,7 +30,7 @@ def pointAtTag(targetTagID):
 
 	zDot=0
 	xDot=0
-	rate=.75
+	rate=.25
 	pointed = False
 	
 	global tagPose
@@ -51,7 +51,7 @@ def pointAtTag(targetTagID):
 		# Spin around and look for the tag 'locatedTag.label.' Stop once we are pointing at it within a small window for error
 		if targetTagID == tagID and tagPose != None: # We have found the tag that we were looking for.
 			relX=tagPose.pose.pose.position.x
-			print('tag position = ', relX)
+			#print('tag position = ', relX)
 			if relX<.05 and relX>-.05: # If we are pointing at the tag
 				thetaDot=0
 				pointed = True
@@ -79,7 +79,7 @@ def viewedTagRelPos(data):
 	tagPose = None
 	tagID = None
 	for detections in data.detections:
-		#print detections.id
+		#print('Detection IDs', detections.id)
 		for idseen in detections.id:
 			if idseen == 0 or idseen == 1 or idseen == 2 or idseen == 3 or idseen == 4 or idseen == 5 :
 				tagID = idseen
@@ -90,7 +90,7 @@ def viewedTagRelPos(data):
 			else: 
 				print('Check for pose of tags')
 
-def approach(targetTagID):
+def approach():
 	# Description: Drive within a certian distace of the tag 'targetTagID'
 		# Return
 			# null
@@ -113,29 +113,29 @@ def approach(targetTagID):
 			break
 
 		if tagPose != None:
-			print 'lost tag'
+			relX=tagPose.pose.pose.position.x
+			relZ=tagPose.pose.pose.position.z
 			
+			#print('Approaching x=', relX)
+			#print('Approaching z=', relZ)
 
-
-		relX=tagPose.pose.pose.position.x
-		relZ=tagPose.pose.pose.position.z
-		
-		#print('Approaching x=', relX)
-		#print('Approaching z=', relZ)
-
-		vRel=np.array([relZ,relX])
-		relPosNorm=np.linalg.norm(vRel)
-		relPosUnitVec=vRel/relPosNorm
-		thetaDot=0
-
-		if relPosNorm > .5:
-			zDot=relPosUnitVec[0]
-			xDot=relPosUnitVec[1]
-			approached=False
+			vRel=np.array([relZ,relX])
+			relPosNorm=np.linalg.norm(vRel)
+			relPosUnitVec=vRel/relPosNorm
+			thetaDot=0
+			print relPosNorm
+			
+			if relPosNorm > .5:
+				zDot=relPosUnitVec[0]
+				xDot=relPosUnitVec[1]
+			else:
+				zDot=0
+				xDot=0
+				approached=True
 		else:
 			zDot=0
 			xDot=0
-			approached=True
+			print 'lost tag'
 
 		jcv.axis1 = xDot
 		jcv.axis2 = zDot
@@ -160,18 +160,24 @@ jcv = JoyCmd()
 # This is the main loop
 while not rospy.is_shutdown():
 	print("Start loop")
+	pointAtTag(0)
+	approach()
+	pointAtTag(1)
+	approach()
+	pointAtTag(2)
+	approach()
 	pointAtTag(3)
-	approach(3)
+	approach()
 	print 'Done'
 	
 	r = rospy.Rate(1)
 	while not rospy.is_shutdown():
 		r.sleep()
 
-	jcv.axis1 = 0.0
-	jcv.axis2 = 0.0
-	jcv.axis3 = 0.0
-	jcv.btn1 = 0.0
-	jcv.btn2 = 0.0
-	jcv.btn3 = 0.0
-	virtualJoy_pub.publish(jcv)
+jcv.axis1 = 0.0
+jcv.axis2 = 0.0
+jcv.axis3 = 0.0
+jcv.btn1 = 0.0
+jcv.btn2 = 0.0
+jcv.btn3 = 0.0
+virtualJoy_pub.publish(jcv)
