@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 # 2.12 Final Project
 # Phillip Daniel April 2021
@@ -45,10 +45,13 @@ def pointAtTag(targetTagID):
 
 
 	while pointed == False:
-		
+		if rospy.is_shutdown():
+			break
+
 		# Spin around and look for the tag 'locatedTag.label.' Stop once we are pointing at it within a small window for error
-		if targetTagID == tagID: # We have found the tag that we were looking for.
+		if targetTagID == tagID and tagPose != None: # We have found the tag that we were looking for.
 			relX=tagPose.pose.pose.position.x
+			print('tag position = ', relX)
 			if relX<.05 and relX>-.05: # If we are pointing at the tag
 				thetaDot=0
 				pointed = True
@@ -60,7 +63,6 @@ def pointAtTag(targetTagID):
 
 		jcv.axis3 = thetaDot
 		virtualJoy_pub.publish(jcv)
-		r.sleep()
 	print('Pointed at tag')
 
 def viewedTagRelPos(data):
@@ -74,26 +76,29 @@ def viewedTagRelPos(data):
 
 	global tagPose
 	global tagID
-	print('Check for pose of tags')
 	tagPose = None
 	tagID = None
 	for detections in data.detections:
-		print detections.id
+		#print detections.id
 		for idseen in detections.id:
 			if idseen == 0 or idseen == 1 or idseen == 2 or idseen == 3 or idseen == 4 or idseen == 5 :
 				tagID = idseen
 				tagPose = detections.pose
-				print('tag', tagID, 'detected')
+				#print('tag', tagID, 'detected')
+				#print('x', tagPose.pose.pose.position.x)
+				#print('z', tagPose.pose.pose.position.z)
+			else: 
+				print('Check for pose of tags')
 
-def approach():
+def approach(targetTagID):
 	# Description: Drive within a certian distace of the tag 'targetTagID'
 		# Return
 			# null
 		# Argument
 			# targetTagID - The ID of the tag that we wish to point the robot's camera towards
 	global tagPose
-	relX=tagPose.pose.pose.position.x
-	relZ=tagPose.pose.pose.position.z
+	#relX=tagPose.pose.pose.position.x
+	#relZ=tagPose.pose.pose.position.z
 	approached=False
 	
 	jcv = JoyCmd()
@@ -102,16 +107,28 @@ def approach():
 	jcv.btn2 = 0.0
 	jcv.btn3 = 0.0
 	
-	while approached==False:
+	while approached==False:			
+
+		if rospy.is_shutdown():
+			break
+
+		if tagPose != None:
+			print 'lost tag'
+			
+
+
 		relX=tagPose.pose.pose.position.x
 		relZ=tagPose.pose.pose.position.z
 		
+		#print('Approaching x=', relX)
+		#print('Approaching z=', relZ)
+
 		vRel=np.array([relZ,relX])
 		relPosNorm=np.linalg.norm(vRel)
 		relPosUnitVec=vRel/relPosNorm
 		thetaDot=0
 
-		if relPosNorm > .2:
+		if relPosNorm > .5:
 			zDot=relPosUnitVec[0]
 			xDot=relPosUnitVec[1]
 			approached=False
@@ -130,17 +147,31 @@ def approach():
 rospy.init_node('TagChaser', anonymous=True)
 
 apriltag_sub = rospy.Subscriber("/tag_detections", AprilTagDetectionArray, viewedTagRelPos)
-virtualJoy_pub = rospy.Publisher("/joy/cmd", JoyCmd)
+print("Subscriber setup")
 
-speed = Twist()
+virtualJoy_pub = rospy.Publisher("/joy/cmd", JoyCmd, queue_size=1)
+print("Publisher setup")
 
-r = rospy.Rate(100)
+r = rospy.Rate(50)
+print("ROS rate setup")
 
+jcv = JoyCmd()
 
 # This is the main loop
 while not rospy.is_shutdown():
-	pointAtTag(0)
-	approach()
+	print("Start loop")
+	pointAtTag(3)
+	approach(3)
+	print 'Done'
 	
-	while 1:
+	r = rospy.Rate(1)
+	while not rospy.is_shutdown():
 		r.sleep()
+
+	jcv.axis1 = 0.0
+	jcv.axis2 = 0.0
+	jcv.axis3 = 0.0
+	jcv.btn1 = 0.0
+	jcv.btn2 = 0.0
+	jcv.btn3 = 0.0
+	virtualJoy_pub.publish(jcv)
