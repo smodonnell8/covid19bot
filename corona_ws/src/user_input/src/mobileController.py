@@ -34,10 +34,10 @@ Vtheta = 0 # Positive rotates left (assumed?)
 # Theta offset is the angle we want the tag to be relative to us
 	# If 0, then we want to be perpendicular to the tag
 # X and Z offsets are in meters
-# Offsets are for [ tag_0, tag_1, tag_2, tag_3, tag_4, tag_5 ]
-X_offset =        [     0,     0,     0,     0,     0,     0 ]
-Z_offset =        [  0.35,  0.35,  0.35,  0.35,  0.35,  0.35 ]
-Theta_offset =    [     0,     0,     0,     0,     0,     0 ]
+# Offsets are for [ tag_0, tag_1, tag_2, tag_3, tag_4, tag_5, tag_5, tag_4, tag_3 ]
+X_offset =        [     0,     0,     0,     0,     0,     0,     0,     0,     0 ]
+Z_offset =        [  0.35,  0.35,  0.35,  0.35,  0.35,  0.35,   1.4,   3.7,   2.5 ]
+Theta_offset =    [     0,     0,     0,     0,     0,     0,     0,     0,     0 ]
 
 # Largest ID the camera can currently see
 largest_ID = 0
@@ -114,10 +114,10 @@ def pointAtTag(targetTagID, direction = 1):
 	# Positive is in front of the tag
 # Theta offset is the angle we want the tag to be relative to us
 	# If 0, then we want to be perpendicular to the tag
-def approachTag(targetTagID):
-	tag_X_offset = X_offset[ targetTagID ]
-	tag_Z_offset = Z_offset[ targetTagID ]
-	tag_angle_offset = Theta_offset[ targetTagID ]
+def approachTag(targetTagID, offsetID):
+	tag_X_offset = X_offset[ offsetID ]
+	tag_Z_offset = Z_offset[ offsetID ]
+	tag_angle_offset = Theta_offset[ offsetID ]
 
 	global Vx, Vz, Vtheta
 
@@ -132,7 +132,7 @@ def approachTag(targetTagID):
 		pointAtTag(targetTagID)
 
 	# Keep running this loop until we are at our target position and orientation
-	while abs(target_Z) > 0.05 or abs(target_Z) > 0.05 or abs(target_theta) > 0.05:
+	while abs(target_X) > 0.05 or abs(target_Z) > 0.05 or abs(target_theta) > 0.05:
 
 		# If we can't see the tag, point at the tag again
 		if( largest_ID != targetTagID ):
@@ -249,23 +249,23 @@ while not rospy.is_shutdown():
 	# Look for first tag
 	pointAtTag(1)
 	# Move towards first tag
-	approachTag(1)
+	approachTag(1,1)
 
 	# After we find the first tag, rotate right to find second tag
 	pointAtTag(2, direction = -1)
-	approachTag(2)
+	approachTag(2,2)
 
 	# Rotate right to find third tag
 	pointAtTag(3, direction = -1)
-	approachTag(3)
+	approachTag(3,3)
 
 	# Rotate left to find fourth tag
 	pointAtTag(4, direction = 1)
-	approachTag(4)
+	approachTag(4,4)
 
 	# Rotate left to find fifth tag
 	pointAtTag(5, direction = 1)
-	approachTag(5)
+	approachTag(5,5)
 
 	# Stop robot
 	jcv.axis1 = 0.0
@@ -278,7 +278,21 @@ while not rospy.is_shutdown():
 
 	# Once docked, publish basket location
 	publishBasketLocation()
-
+	
+	#TODO figure out when UR team is done
+	
+	# Rotate left to find fifth tag, then back away from it
+	pointAtTag(5, direction = 1)
+	approachTag(5, 6)
+	
+	# Rotate right to find fourth tag and then back away
+	pointAtTag(4, direction = -1)
+	approachTag(4, 7)
+	
+	# Rotate right to find third tag and then back away
+	pointAtTag(3, direction = -1)
+	approachTag(3, 8)
+	
 	r = rospy.Rate(1)
 	while not rospy.is_shutdown():
 		r.sleep()
